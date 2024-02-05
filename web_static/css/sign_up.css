@@ -8,6 +8,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-image: url("/web_static/css/imgs/054e766b7123e5ea964c59bd943c6004.jpg");
+    background-size: cover;
 }
 .container{
     width: 420px;
@@ -24,23 +26,37 @@ body {
 }
 .container .data{
     position: relative;
-    width: 100%;
-    height: 100;
+    width: 80%;
     background: transparent;
     border: none;
     outline: none;
-    border: 2px solid rgb(255, 255, 255, .2);
+    border: 2px solid rgba(3, 3, 3, 0.2);
     border-radius: 40px;
     font-size: 16px;
-    color: #fff;
+    color: black;
     padding: 5px 30px 10px 10px;
+    margin: 20px;
 }
-.data input ::placeholder{
+.data input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px rgba(3, 3, 3, 0.2);
+    border-radius: 40px;
+    font-size: 16px;
+}
+.data input::placeholder{
+    color: black;
+    text-align: center;
+}
+.data input::placeholder #password_conf{
     color: #fff;
 }
 .container #submit {
     width: 100%;
-    height: 45px;
+    height: 40px;
     border: none;
     outline: none;
     border-radius: 40px;
@@ -49,4 +65,16 @@ body {
     font-size: 16px;
     color: #333;
     font-weight: 600;
+    margin-bottom: 20px;
+}
+.container .anchors{
+    margin: 20px 0px 15px;
+}
+.anchors p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.anchors p a:hover{
+    text-decoration: underline;
 }
