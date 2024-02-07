@@ -10,3 +10,6 @@ The project is used to :
 * Book a flight with accordance to the time the user need to take the travel.
 ## Found a bug?
 If tyou find an issue or would like to ive a suggestion on improvement to this project, please use the issue tab above.
+## Usage:
+
+This project is built to show skills gained so far, not intended for commercial use or any other usage, it is just a show off.
