@@ -13,3 +13,10 @@ If tyou find an issue or would like to ive a suggestion on improvement to this p
 ## Usage:
 
 This project is built to show skills gained so far, not intended for commercial use or any other usage, it is just a show off.
+## Coding styles:
+
+During the period of a year in ALX i learnt that it is better to follow some rules during coding even if the program worked before, in order to help other people who would like to use your Project or participate know what some parts of the project does, hence during thos project I ensured that my codes were so.
+For:
+* Python: I considered using the pycodestyle and documenting all my module
+* HTML&CSS: files are  W3C compliant.
+

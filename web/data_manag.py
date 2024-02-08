@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Data management."""
-from management import user, airport, flight
+from table import user, airport, flight
 from os import getenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker

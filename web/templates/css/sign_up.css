@@ -8,7 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url("/web_static/css/imgs/054e766b7123e5ea964c59bd943c6004.jpg");
+    background-image: url("imgs/054e766b7123e5ea964c59bd943c6004.jpg");
     background-size: cover;
 }
 .container{
