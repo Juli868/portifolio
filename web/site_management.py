@@ -10,6 +10,10 @@ def home():
 @app.route("/login")
 def login():
     return render_template('login.html')
+@app.route("login_check", methods=["POST"])
+def checker():
+    mail = request.form.get("e_mail")
+    password = request.form.get("password")
 @app.route("/signup")
 def sign_up():
     return render_template("sign_up.html")
