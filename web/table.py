@@ -21,6 +21,11 @@ class User(BaseModel):
         self.pwd = password
 
 
+class Admin_user(BaseModel):
+    table_name = "admin"
+    mail
+
+
 class Airport(BaseModel):
     """Define the atrributes of an airport."""
 
