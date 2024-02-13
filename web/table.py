@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Start the tables creation."""
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Float, ForeignKey,DateTime
 from base_model import BaseModel
 
 
@@ -11,7 +11,7 @@ class User(BaseModel):
     f_name = Column(String(60), nullable=False)
     l_name = Column(String(60), nullable=False)
     mail = Column(String(120), nullable=False, unique=True)
-    pwd = Column(string(60), nullable=False)
+    pwd = Column(String(60), nullable=False)
 
     def __init__(self, fname, lname, mail, password):
         """Initialise the class attributes."""
@@ -19,11 +19,6 @@ class User(BaseModel):
         self.l_name = lname
         self.mail = mail
         self.pwd = password
-
-
-class Admin_user(BaseModel):
-    table_name = "admin"
-    mail
 
 
 class Airport(BaseModel):

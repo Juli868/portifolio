@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-from flask import Flask, render_template
+"""Define app routes."""
+from flask import Flask, render_template, request, flash, redirect
 from data_manag import Storage
 from table import User, Flight
 app = Flask(__name__)
@@ -9,30 +10,51 @@ app.url_map.strict_slashes = False
 @app.route("/")
 @app.route("/home")
 def home():
+    """Define welcome page of the app."""
     return render_template('home.html')
 
 
-@app.route("/login")
+@app.route("/book")
+def available():
+    """Illustrate the available choices."""
+    return render_template('flights.html')
+
+
+@app.route("/login", )
 def login():
-    return render_template('login.html')
+    """Define the login page."""
+    return render_template("login.html")
 
 
-@app.route("login_check", methods=["POST"])
+@app.route("/check", methods=["POST"])
 def checker():
-    mail = request.form.get("e_mail")
-    password = request.form.get("password")
+    """Check for the given input if are known."""
+    mail = request.form("e_mail")
+    password = request.form("password")
+    return url_for('/home')
 
 
-@app.route("save", methods=["POST"])
-def signing_up:
-    new_user = user()
+@app.route("/signup", methods=['GET', 'POST'])
+def sign_up():
+    """Define the sign up form."""
+    return render_template("sign_up.html")
+
+
+@app.route("/register", methods=['POST'])
+def register():
+    """Save the given information on signup form."""
+    f_name = request.form.get("Firstname")
+    s_name = request.form.get("Secondname")
+    mail = request.form.get("email")
+    first_p = request.form.get("password_f")
+    last_p = request.form.get("password_conf")
+    if (first_p != last_p):
+        flash("passwords don't match")
+    new_user = User(f_name, s_name, mail, first_p)
     Storage.save(new_user)
     Storage.commit()
-
-
-@app.route("/signup")
-def sign_up():
-    return render_template("sign_up.html")
+    flash("Account created, you can now log in", "info")
+    return (url_for("login"))
 
 
 if __name__ == '__main__':
