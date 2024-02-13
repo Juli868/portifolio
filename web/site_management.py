@@ -31,6 +31,14 @@ def checker():
     """Check for the given input if are known."""
     mail = request.form("e_mail")
     password = request.form("password")
+    users = Storage.all("User")
+    for k and v in users:
+        if k  = mail:
+            if v = password:
+                flash("Sign in successful.")
+                return render_template("home.html")
+            flash("Incorrect mail or password.")
+            return render_template("sign_up.html")
     return url_for('/home')
 
 
