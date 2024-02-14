@@ -31,15 +31,15 @@ def checker():
     """Check for the given input if are known."""
     mail = request.form("e_mail")
     password = request.form("password")
-    """users = Storage.all("User")
+    users = Storage.all("User")
     for k and v in users:
         if k  = mail:
             if v = password:
-                flash("Sign in successful.")
+                #flash("Sign in successful.")
                 return render_template("home.html")
             flash("Incorrect mail or password.")
             return render_template("sign_up.html")
-    return url_for('/home')"""
+    return render_template('flights.html')
 
 
 @app.route("/signup", methods=['GET', 'POST'])
@@ -57,11 +57,11 @@ def register():
     first_p = request.form.get("password_f")
     last_p = request.form.get("password_conf")
     """if (first_p != last_p):
-        flash("passwords don't match")
+        flash("passwords don't match")"""
     new_user = User(f_name, s_name, mail, first_p)
     Storage.save(new_user)
     Storage.commit()
-    flash("Account created, you can now log in", "info")"""
+    #flash("Account created, you can now log in", "info")
     return redirect(url_for("login"))
 
 

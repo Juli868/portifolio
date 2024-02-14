@@ -20,7 +20,6 @@ class Storage:
         FLIGHT_PWD = getenv('FLIGHT_PWD')
         FLIGHT_HOST = getenv('FLIGHT_HOST')
         FLIGHT_DB = getenv('FLIGHT_DB')
-        FLIGHT_ENV = getenv('FLIGHT_ENV')
         self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.
                                       format(FLIGHT_USER,
                                              FLIGHT_PWD,
