@@ -11,7 +11,7 @@ app.url_map.strict_slashes = False
 @app.route("/home")
 def home():
     """Define welcome page of the app."""
-    return render_template('home.html')
+    return render_template("home.html")
 
 
 @app.route("/book")
@@ -31,7 +31,7 @@ def checker():
     """Check for the given input if are known."""
     mail = request.form("e_mail")
     password = request.form("password")
-    users = Storage.all("User")
+    """users = Storage.all("User")
     for k and v in users:
         if k  = mail:
             if v = password:
@@ -39,7 +39,7 @@ def checker():
                 return render_template("home.html")
             flash("Incorrect mail or password.")
             return render_template("sign_up.html")
-    return url_for('/home')
+    return url_for('/home')"""
 
 
 @app.route("/signup", methods=['GET', 'POST'])
@@ -56,14 +56,18 @@ def register():
     mail = request.form.get("email")
     first_p = request.form.get("password_f")
     last_p = request.form.get("password_conf")
-    if (first_p != last_p):
+    """if (first_p != last_p):
         flash("passwords don't match")
     new_user = User(f_name, s_name, mail, first_p)
     Storage.save(new_user)
     Storage.commit()
-    flash("Account created, you can now log in", "info")
-    return (url_for("login"))
+    flash("Account created, you can now log in", "info")"""
+    return redirect(url_for("login"))
 
+
+@app.route("/services")
+def services():
+    return render_template('services.html')
 
 if __name__ == '__main__':
     app.run(host=('0.0.0.0'), port='5500')
