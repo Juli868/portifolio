@@ -4,9 +4,11 @@ from table import User, Airport, Flight
 from os import getenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 import sqlalchemy
 
 classes = {"User": User, "Airport": Airport, "Flight": Flight}
+Base = declarative_base()
 
 
 class Storage:
@@ -15,7 +17,7 @@ class Storage:
     __engine = None
     __session = None
 
-    def __init(self):
+    def __init__(self):
         FLIGHT_USER = getenv('FLIGHT_USER')
         FLIGHT_PWD = getenv('FLIGHT_PWD')
         FLIGHT_HOST = getenv('FLIGHT_HOST')
@@ -51,7 +53,7 @@ class Storage:
 
     def reload(self):
         """Reload data from the database."""
-        Base.meatadata.create_all(self.__engine)
+        Base.metadata.create_all(self.__engine)
         sess_factor = sessionmaker(bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(sess_factor)
         self.__session = Session

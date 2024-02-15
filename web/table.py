@@ -29,10 +29,10 @@ class Airport(BaseModel):
     long = Column(Float, nullable=False)
     lat = Column(Float, nullable=False)
 
-    def __init(self, country, name, latitude, longitude):
+    def __init__(self, country, name, lat, long):
         self.country = country
         self.name = name
-        self.long = longitude
+        self.long = long
         self.lat = lat
 
 
@@ -47,10 +47,10 @@ class Flight(BaseModel):
     amount = Column(Float, nullable=False)
     trip_class = Column(String(20), nullable=False)
 
-    def __init(self, l_from, l_to, departure, trip_class, amount):
+    def __init__(self, l_from, l_to, departure, trip_class, amount):
         """Initialise the instance."""
         self.location_fr = l_from
         self.location_to = l_to
         self.departure_time = departure
-        self.amount = amount,
+        self.amount = amount
         self.trip_class = trip_class

@@ -32,10 +32,10 @@ def checker():
     mail = request.form("e_mail")
     password = request.form("password")
     users = Storage.all("User")
-    for k and v in users:
-        if k  = mail:
-            if v = password:
-                #flash("Sign in successful.")
+    for k ,v in users.items():
+        if k == mail:
+            if v == password:
+                """flash("Sign in successful.")"""
                 return render_template("home.html")
             flash("Incorrect mail or password.")
             return render_template("sign_up.html")
@@ -59,15 +59,22 @@ def register():
     """if (first_p != last_p):
         flash("passwords don't match")"""
     new_user = User(f_name, s_name, mail, first_p)
-    Storage.save(new_user)
-    Storage.commit()
-    #flash("Account created, you can now log in", "info")
+    storage = Storage()
+    storage.reload()
+    storage.save()
+    storage.commit()
+    """flash("Account created, you can now log in", "info")"""
     return redirect(url_for("login"))
 
 
 @app.route("/services")
 def services():
     return render_template('services.html')
+
+
+@app.route("/self")
+def my_self():
+    return render_template("self.html")
 
 if __name__ == '__main__':
     app.run(host=('0.0.0.0'), port='5500')
