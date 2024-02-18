@@ -1,30 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <header>Flights</header>
-    <link rel="stylesheet" href="/static/css/home.css">
-</head>
-
-<body>
-    <header class="header"></header>
-    <a href="{{ url_for('home') }}" class="logo">Julias</a>
-    <nav class="nav">
-        <a href="{{ url_for('home') }}">Home</a>
-        <a href="{{ url_for('available') }}">Portifolio</a>
-        <a href="{{ url_for('services') }}">Skills</a>
-        <a href="https://docs.google.com/document/d/1LIG1-vJk6XXnPAKMRe5SdDbFizUwHM1APt1yR3UoNiw/edit?usp=sharing">My CV</a>
-    </nav>
-    </header>
-    <section class="home">
-        <div class="content">
-            <p>
-                
-            </p>
-            After analysing the problem in the my communnity, the technology just seems to get advanced in
-            some industries more than the other. Therefore I decided t 
-        </div>
-    </section>
-</body>
-
-</html>
+{% extends "layout.html" %}
+{% block body %}
+<p id="first">
+    <!-- into -->
+    <!-- 1 -->
+    After analysing the problem in the my communnity, the technology just seems to get advanced in
+    some industries more than the other. Therefore I decided to develop a solution to help my fellows
+    gain the information on the available flights. <br>
+    <img src="" alt="home screenshot">
+    <!-- 2 -->
+    Generally people from my country take a person who can take a flight to a place as some kind of a
+    Demi-god. Unfortunately it us because they can't get any information on a place that they can use to get
+    so that inspired me to create this application to help those, just easily access the information about
+    flights to use as they please.
+    <img src="" alt="home screenshot">
+</p>
+<p id="second">
+    <h1>
+        Get travelling news across the word
+    </h1>
+</p>
+<p id="last">
+    <img src="" alt="search screenshot">
+    All flight prices in one place
+</p>
+<a href="{{ url_for('available') }}"></a>Give it a go</a>
+{% endblock %}
