@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <header>Flights</header>
+        <link rel="stylesheet" href="/static/css/home.css">
+    </head>
+    
+    <body>
+        <header class="header"></header>
+        <a href="{{ url_for('home') }}" class="logo">Julias</a>
+        <nav class="nav">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('available') }}">Portifolio</a>
+            <a href="{{ url_for('services') }}">Skills</a>
+            <a href="https://docs.google.com/document/d/1LIG1-vJk6XXnPAKMRe5SdDbFizUwHM1APt1yR3UoNiw/edit?usp=sharing">My CV</a>
+        </nav>
+        </header>
+        <section class="home">
+            <div class="content">
+                {% block body %}{% endblock %}
+            </div>
+        </section>
+    </body>
+</html>
