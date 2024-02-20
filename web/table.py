@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Start the tables creation."""
-from sqlalchemy import Column, Integer, String, Float, ForeignKey,DateTime
+from sqlalchemy import Column, Integer, String, Float, ForeignKey, DateTime
 from base_model import BaseModel
 
 
@@ -30,6 +30,7 @@ class Airport(BaseModel):
     lat = Column(Float, nullable=False)
 
     def __init__(self, country, name, lat, long):
+        """Initialise the class attributes."""
         self.country = country
         self.name = name
         self.long = long

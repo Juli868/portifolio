@@ -8,6 +8,15 @@
 </head>
 
 <body>
+    {% block body %}
+    {% with messages = get_flashed_messages(with_categories=True, category_filter=["error", "info"]) %}
+        {% if messages %}
+            {%for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {% endblock %}
     <div class="container">
         <h1>Sign up</h1>
         <form action="/register" method="POST">
@@ -28,7 +37,7 @@
             </div>
             <div class="anchors">
                 <button type="submit" id="submit">Submit</button>
-		<p> Have an account?<a href="{{ url_for('login')}}">Login</a></p>
+                <p> Have an account?<a href="{{ url_for('login')}}">Login</a></p>
             </div>
         </form>
     </div>

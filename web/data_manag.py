@@ -18,8 +18,9 @@ class Storage:
     __session = None
 
     def __init__(self):
-        FLIGHT_USER = getenv('FLIGHT_USER')
-        FLIGHT_PWD = getenv('FLIGHT_PWD')
+        """Initialise the class."""
+        FLIGHT_USER = getenv('FLIGHT_USER_2')
+        FLIGHT_PWD = getenv('FLIGHT_PWD_2')
         FLIGHT_HOST = getenv('FLIGHT_HOST')
         FLIGHT_DB = getenv('FLIGHT_DB')
         self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.
