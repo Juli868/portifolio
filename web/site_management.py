@@ -30,8 +30,8 @@ def login():
 @app.route("/check", methods=["POST"])
 def checker():
     """Check for the given input if are known."""
-    mail = request.form("e_mail")
-    password = request.form("password")
+    mail = request.form.get("e_mail")
+    password = request.form.get("password")
     users = Storage.all("User")
     for k, v in users.items():
         if k == mail:
