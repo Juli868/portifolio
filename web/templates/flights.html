@@ -1,3 +1,40 @@
 {% extends "layout.html" %}
-{% block body % }
+{% block body %}
+<div class="data">
+    <form action="/search" method="GET">
+        <label for="countries">Country from</label>
+        <input list="country_list" id="countries" name="countries" autofocus />
+        <datalist id="country_list">
+            <option value="default" selected disabled>Country from</option>
+            {% for country in countries%}
+            <option value="{{ country }}"> {{ country }}
+                {% endfor %}
+        </datalist>
+        <label for="countries">Country to</label>
+        <input list="country_list" autofocus />
+        <datalist id="country_list">
+            <option value="default" selected disabled>Country to</option>
+            {% for country in countries%}
+            <option value="{{ country }}">{{ country }}
+                {% endfor %}
+        </datalist>
+
+        <label for="airports">Airport from</label>
+        <input list="airport_list" autofocus autocomplete="on" />
+        <datalist id="airport_list">
+            {% for airport in airports%}
+            <option value="{{ airport }}">{{ airport }}
+                {% endfor %}
+        </datalist>
+        <label for="">Destination Airport</label>
+        <input list="airport_list" autofocus autocomplete="on" />
+        <datalist id="airport_list">
+            <option value="default" selected disabled>Airport to</option>
+            {% for airport in airports%}
+            <option value="{{ airport }}">{{ airport }}
+                {% endfor %}
+        </datalist>
+        <button>Search</button>
+    </form>
+</div>
 {% endblock %}

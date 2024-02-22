@@ -3,6 +3,8 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
 from data_manag import Storage
 from table import User, Flight
+from countries import countries, airports
+
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 app.secret_key = "julias"
@@ -18,10 +20,11 @@ def home():
 @app.route("/book")
 def available():
     """Illustrate the available choices."""
-    return render_template('flights.html')
+
+    return render_template('flights.html', countries=countries, airports=airports)
 
 
-@app.route("/login", )
+@app.route("/login")
 def login():
     """Define the login page."""
     return render_template("login.html")
@@ -68,16 +71,16 @@ def register():
     return redirect(url_for("login"))
 
 
-@app.route("/services")
-def services():
-    """Show the skillset I have."""
-    return render_template('services.html')
-
-
 @app.route("/self")
-def my_self():
+def mi_self():
     """Describe my self."""
     return render_template("self.html")
+
+
+@app.route("/search")
+def search():
+    """Search for data from the page"""
+    pass
 
 
 if __name__ == '__main__':

@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Fly high</title>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Flights</title>
     <link rel="stylesheet" href="/static/css/sign_up.css">
 </head>
 
@@ -21,19 +22,19 @@
         <h1>Sign up</h1>
         <form action="/register" method="POST">
             <div class="data">
-                <input type="text" placeholder="First name" required name="Firstname">
+                <input type="text" placeholder="First name" required name="Firstname" autofocus>
             </div>
             <div class="data">
-                <input type="text" placeholder="Second name" required name="Secondname">
+                <input type="text" placeholder="Second name" required name="Secondname" autofocus>
             </div>
             <div class="data">
-                <input type="text" placeholder="E-mail" required name="email">
+                <input type="text" placeholder="E-mail" required name="email" autofocus>
             </div>
             <div class="data">
-                <input type="password" placeholder="Password" required name="password_f">
+                <input type="password" placeholder="Password" required name="password_f" autofocus>
             </div>
             <div class="data">
-                <input type="password" placeholder="Confirm password" required name="password_conf">
+                <input type="password" placeholder="Confirm password" required name="password_conf" autofocus>
             </div>
             <div class="anchors">
                 <button type="submit" id="submit">Submit</button>

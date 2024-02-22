@@ -1,4 +1,4 @@
-Country = [
+countries = [
     'Afghanistan',
     'Albania',
     'Algeria',
