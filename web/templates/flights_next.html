@@ -1,6 +1,6 @@
 {% extends "flights.html" %}
 {% block body %}
-<div>
+<div class="results">
     <div class="notice">
         <p>
             <i class='bx bx-error'></i>
@@ -10,33 +10,32 @@
     <table>
         <tr>
             <th> Country</th>
+            <th>Origin city</th>
             <th> Destination</th>
+            <th>Destination city</th>
             <th>Passenger number</th>
-            <th>Class</th>
             <th>price</th>
             <th>Distance</th>
-            <th>Return</th>
             <th>Departure time</th>
             <th>Arriving time</th>
-            <th>returning time</th>
         </tr>
+        {% for data in real_data %}
         <tr>
-            {% for data in real_data %}
-                <tr>
-                    <td>{%data.get('countryFrom',{}.get('name'))%}</td>
-                    <td>{%data.get('countryTo',{}.get('name')) %}</td>
-                    <td>{%data.get('') %}</td>
-                    <td>{%data.get('availability',{}.get('seats')) %}</td>
-                    <td>{%data.get('') %}</td>
-                    <td>{%data.get('price') %}</td>
-                    <td>{%data.get('') %}</td>
-                    <td>{%data.get('distance') %}</td>
-                    <td>{%data.get('') %}</td>
-                    <td>{%data.get('local_departure') %}</td>
-                    <td>{%data.get(''local_arrival'') %}</td>
-                    <td>{%data.get('') %}</td>
-                </tr>
+            {% set country_from = data.countryFrom %}
+            <td>{{country_from.name }}</td>
+            {% set country_to = data.countryTo %}
+            <td>{{ data.cityFrom }}</td>
+            <td>{{ country_to.name }}</td>
+            <td>{{ data.cityTo }}</td>
+            {% set seat = data.availability %}
+            <td>{{ seat.seats }}</td>
+            <td>{{ data.price }}</td>
+            <td>{{ data.distance }}</td>
+            <td>{{ data.local_departure }}</td>
+            <td>{{ data.local_arrival }}</td>
         </tr>
+        {% endfor %}
     </table>
+    <a href="{{ url_for('available') }}">back</a>
 </div>
 {% endblock %}

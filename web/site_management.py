@@ -85,7 +85,9 @@ def search():
     ctry_to = request.form.get("country_to")
     airport_to = request.form.get("airport_to")
     airport_from = request.form.get("airport_from")
-    data = get_data(airport_from, ctry_to)
+    airp_to = airport_to[-4:-1]
+    airp_from = airport_from[-4:-1]
+    data = get_data(fly_from=airp_from, fly_to=airp_to)
     if type(data) == dict:
         real_data = data.get('data')
         return render_template("flights_next.html", real_data=real_data)

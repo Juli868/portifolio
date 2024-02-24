@@ -90,5 +90,15 @@ body .home{
 .home_pagedDATA a{
     bottom: 20px;
     text-decoration: none;
-
+}
+.home .results{
+    margin-inline: auto;
+}
+.results table{
+    text-decoration: none;
+    justify-content: center;
+    width: 95%;
+}
+table td,th{
+    padding: 1rem;
 }
