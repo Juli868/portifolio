@@ -1,0 +1,42 @@
+{% extends "flights.html" %}
+{% block body %}
+<div>
+    <div class="notice">
+        <p>
+            <i class='bx bx-error'></i>
+            Due to unfinished airport list be careful.
+        </p>
+    </div>
+    <table>
+        <tr>
+            <th> Country</th>
+            <th> Destination</th>
+            <th>Passenger number</th>
+            <th>Class</th>
+            <th>price</th>
+            <th>Distance</th>
+            <th>Return</th>
+            <th>Departure time</th>
+            <th>Arriving time</th>
+            <th>returning time</th>
+        </tr>
+        <tr>
+            {% for data in real_data %}
+                <tr>
+                    <td>{%data.get('countryFrom',{}.get('name'))%}</td>
+                    <td>{%data.get('countryTo',{}.get('name')) %}</td>
+                    <td>{%data.get('') %}</td>
+                    <td>{%data.get('availability',{}.get('seats')) %}</td>
+                    <td>{%data.get('') %}</td>
+                    <td>{%data.get('price') %}</td>
+                    <td>{%data.get('') %}</td>
+                    <td>{%data.get('distance') %}</td>
+                    <td>{%data.get('') %}</td>
+                    <td>{%data.get('local_departure') %}</td>
+                    <td>{%data.get(''local_arrival'') %}</td>
+                    <td>{%data.get('') %}</td>
+                </tr>
+        </tr>
+    </table>
+</div>
+{% endblock %}

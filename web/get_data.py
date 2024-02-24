@@ -2,20 +2,14 @@
 """Get data from an api."""
 import requests
 from os import getenv
-
-params = {
-    'fly_from': 'KGL',  # Example: Prague
-    'date_from': '01/08/2024',
-    'date_to': '15/08/2024',
-}
-
+import datetime
 
 def get_data(
         fly_from=None,
         fly_to=None,
-        date_from=None,
+        currency='USD',
         date_to=None,
-        currency=None,
+        date_from=None,
         flight_class=None,
         price_min=None,
         price_max=None
@@ -30,7 +24,7 @@ def get_data(
             'curr': currency,
             'selected_cabins': flight_class,
             'prices_to': price_max,
-            'prices_from': prices_min
+            'prices_from': price_min
             }
     headers = {'apikey': api_key}
     url = 'https://tequila-api.kiwi.com/v2/search'

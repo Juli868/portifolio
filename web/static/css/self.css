@@ -52,7 +52,7 @@ body .home {
 
 .home .content {
     max-width: 700px;
-    margin: 10px 0 40px;
+    margin: 10px 20px;
 }
 
 .content h1 {
@@ -69,8 +69,9 @@ body .home {
 
 .content p {
     font-size: 16px;
-    margin: 10px 0 40px;
-    width: 90%
+    margin: 10px 0 20px;
+    width: 90%;
+    float:left;
 }
 
 .content .more_info {
@@ -102,22 +103,37 @@ body .home {
     transition: 0.6s;
 }
 .home .social{
-    position:flex;
-    margin-top: 40px;
-    bottom: 40px;
-    width: 170px;
+    position: fixed;
+    bottom: 10px;
+    transform: translateX(-50%);
+    right: 0;
+    margin-top: 0;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
 }
 .social a {
-    position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 50px;
     height: 50px;
-    border: 2px;
+    margin-bottom: 20px;
+    background: #9c9a9a;
+    color: #000;
     border: 2px solid #9c9a9a;
     text-decoration: none;
-    border-radius: 40px;
+    border-radius: 50%;
+    margin-inline: 5px;
+}
+aside img{
+    top:0%;
+    height: 50px;
+    width: 7%;
+    float: right;
+    margin: 0.15%;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #fff;
 }

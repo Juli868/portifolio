@@ -66,3 +66,29 @@ body .home{
     font-weight: 400;
     margin: 20px;
 }
+.content p{
+    width: 70%;
+    justify-content: center;
+    display: flex;
+}
+.content img {
+    position: relative;
+    float: right;
+    height: 240px;
+    width: auto;
+    margin: 20px;
+    border: 2px solid #fff;
+    right: 5px;
+}
+.content .home_pagedDATA{
+    padding: 10px;
+    margin-top: 20px;
+}
+.home_pagedDATA h1{
+    margin-bottom: 20px;
+}
+.home_pagedDATA a{
+    bottom: 20px;
+    text-decoration: none;
+
+}
