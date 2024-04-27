@@ -47,7 +47,7 @@ def checker():
     #return redirect(url_for("flights.html"))
 
 
-@app.route("/signup", methods=['GET', 'POST'])
+@app.route("/signup")
 def sign_up():
     """Define the sign up form."""
     return render_template("sign_up.html")
